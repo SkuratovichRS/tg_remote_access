@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - ${PWD}/volumes/redis:/data
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ${PWD}/volumes/rabbitmq:/var/lib/rabbitmq
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ${PWD}/volumes/postgres:/var/lib/postgresql/data
+  virus:
+    image: virus:latest
+
+networks:
+  default:
+    name: service_network
