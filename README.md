@@ -1,7 +1,7 @@
 # Telegram remote access client
 ## The project is designed for remote host control via telegram bot
 
-![Alt text](docs/command_execution_pipeine.drawio.svg)
+![Alt text](docs/command_execution_pipeline.drawio.svg)
 
 ## Development
 1. Make `.env` with your data 
